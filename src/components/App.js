@@ -11,9 +11,8 @@ function App() {
     <div className="App">
       <Header key={blogData.name} name={blogData.name}/>
       <About key={blogData.about} imageSrc={blogData.image} text={blogData.about}/>
+      <h4>Blog Posts:</h4>
       <ArticleList key={blogData.posts} posts={blogData.posts}/>
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
     </div>
   );
 }
