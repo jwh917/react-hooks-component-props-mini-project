@@ -9,54 +9,48 @@ function Article({title, date="January 1, 1970", preview, minutes}) {
   function MinutesToRead(){
     console.log(minutes)
 
-    let cupCount
-
-    // if(minutes <= 5 ){
-    //   cupCount = "☕️"
-    // } 
-
+    let iconCount
 
     switch (true) {
       // ☕️ less than 30 mins
       case minutes <= 5:
-        cupCount = "☕️"
+        iconCount = "☕️"
           break;
       case minutes >= 6 && minutes <= 10:
-        cupCount = "☕️☕️"
+        iconCount = "☕️☕️"
           break;
       case minutes >= 11 && minutes <= 15:
-        cupCount = "☕️☕️☕️"
+        iconCount = "☕️☕️☕️"
           break;
       case minutes >= 16 && minutes <= 20:
-        cupCount = "☕️☕️☕️☕️"
+        iconCount = "☕️☕️☕️☕️"
           break;
       case minutes >= 21 && minutes <= 25:
-        cupCount = "☕️☕️☕️☕️☕️"
+        iconCount = "☕️☕️☕️☕️☕️"
           break;
       case minutes >= 26 && minutes <= 30:
-        cupCount = "☕️☕️☕️☕️☕️☕️"
+        iconCount = "☕️☕️☕️☕️☕️☕️"
           break;
+
       // 🍱 more than 30 mins
       case minutes >= 31 && minutes <= 40:
-        cupCount = "🍱🍱🍱🍱"
+        iconCount = "🍱🍱🍱🍱"
           break;
       case minutes >= 41 && minutes <= 50:
-        cupCount = "🍱🍱🍱🍱🍱"
+        iconCount = "🍱🍱🍱🍱🍱"
           break;
       case minutes >= 51 && minutes <= 60:
-        cupCount = "🍱🍱🍱🍱🍱🍱"
+        iconCount = "🍱🍱🍱🍱🍱🍱"
           break;
       case minutes >= 61 && minutes <= 70:
-        cupCount = "🍱🍱🍱🍱🍱🍱🍱"
+        iconCount = "🍱🍱🍱🍱🍱🍱🍱"
           break;
       default:
-        cupCount = "☕️🍱 Invaild"
+        iconCount = "☕️🍱 Invaild"
     }
 
-    return <small> {cupCount} {minutes}  min read</small>
+    return <small>{iconCount}&nbsp;&nbsp;{minutes} min read</small>
   }
-
-
 
   // title func
   function ArticleTitle(){
@@ -65,7 +59,7 @@ function Article({title, date="January 1, 1970", preview, minutes}) {
   
   // date func
   function ArticleDate(){
-    return <small> {date} |</small>
+    return <small>{date}</small>
   }
   
   // preview func
@@ -76,7 +70,7 @@ function Article({title, date="January 1, 1970", preview, minutes}) {
   return (
     <div>
       {<ArticleTitle/>}
-      {<ArticleDate/>} {<MinutesToRead/>}
+      {<ArticleDate/>} | {<MinutesToRead/>}
       {<ArticlePreview/>}
     </div>
   );
